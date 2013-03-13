@@ -1,0 +1,15 @@
+# use glob syntax.
+syntax: glob
+*.a
+*.bak
+*.i
+*.exe
+*.layout
+*.log
+*.o
+*.orig
+*-results.log
+*.s
+*.sublime-workspace
+.gradle
+commands.html
