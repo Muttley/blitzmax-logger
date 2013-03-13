@@ -1,0 +1,24 @@
+{
+	"folders":
+	[
+		{
+			"path": ".",
+			"folder_exclude_patterns": [".bmx", ".gradle"],
+			"file_exclude_patterns": ["*.i", "*.sublime-workspace"]
+		}
+	],
+	"build_systems": [
+		{
+			"name": "Gradle: Build muttley.logger Module",
+			"cmd": ["gradle", "--daemon", "build_module"],
+			"working_dir": "${project_path}/logger.mod",
+			"shell": "true"
+		},
+		{
+			"name": "Gradle: Run muttley.logger Module Tests",
+			"cmd": ["gradle", "--daemon", "run_tests"],
+			"working_dir": "${project_path}/logger.mod",
+			"shell": "true"
+		}
+	]
+}
