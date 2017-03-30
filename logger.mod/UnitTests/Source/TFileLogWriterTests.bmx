@@ -9,14 +9,13 @@ Type TFileLogWriterTests Extends TTest
 
 	Field logLevels:Int[]
 
-
 	Method Setup() {before}
 		logger = TLoggerMock.GetInstance()
 
 		logWriter = New TFileLogWriter
 		logger.AddWriter (logWriter)
 
-		logLevels = new Int[8]
+		logLevels = New Int[8]
 		logLevels[0] = LOGGER_EMERGENCY
 		logLevels[1] = LOGGER_ALERT
 		logLevels[2] = LOGGER_CRITICAL
@@ -27,14 +26,10 @@ Type TFileLogWriterTests Extends TTest
 		logLevels[7] = LOGGER_DEBUG
 	EndMethod
 
-
-
 	Method Breakdown() {after}
 		logger.Close()
 		logger = Null
 	EndMethod
-
-
 
 	' Test that the specified files are identical
 	Method AreFilesIdentical:Int (file1:String, file2:String)
@@ -65,8 +60,6 @@ Type TFileLogWriterTests Extends TTest
 		Return True
 	EndMethod
 
-
-
 	' Send test messages at all possible severity levels
 	Method SendTestMessages()
 		For Local logLevel:Int = EachIn logLevels
@@ -76,19 +69,13 @@ Type TFileLogWriterTests Extends TTest
 		Next
 	EndMethod
 
-
-
 	Method DifferentFilesAreNotIdentical() {test}
 		assertFalse (AreFilesIdentical ("data/test-log0.log", "data/test-log1.log"))
 	EndMethod
 
-
-
 	Method SameFilesAreIdentical() {test}
 		AssertTrue (AreFilesIdentical ("data/test-log7.log", "data/test-log7.log"))
 	EndMethod
-
-
 
 	Method LogFileContainsExpectedDataAtLogLevelEmergency() {test}
 		Local filename:String = "data/test-log0-results.log"
@@ -104,8 +91,6 @@ Type TFileLogWriterTests Extends TTest
 		AssertTrue (AreFilesIdentical (filename, "data/test-log0.log"))
 	EndMethod
 
-
-
 	Method LogFileContainsExpectedDataAtLogLevelAlert() {test}
 		Local filename:String = "data/test-log1-results.log"
 		logWriter.SetFilename  (filename)
@@ -118,8 +103,6 @@ Type TFileLogWriterTests Extends TTest
 
 		AssertTrue (AreFilesIdentical (filename, "data/test-log1.log"))
 	EndMethod
-
-
 
 	Method LogFileContainsExpectedDataAtLogLevelCritical() {test}
 		Local filename:String = "data/test-log2-results.log"
@@ -134,8 +117,6 @@ Type TFileLogWriterTests Extends TTest
 		AssertTrue (AreFilesIdentical (filename, "data/test-log2.log"))
 	EndMethod
 
-
-
 	Method LogFileContainsExpectedDataAtLogLevelError() {test}
 		Local filename:String = "data/test-log3-results.log"
 		logWriter.SetFilename  (filename)
@@ -148,8 +129,6 @@ Type TFileLogWriterTests Extends TTest
 
 		AssertTrue (AreFilesIdentical (filename, "data/test-log3.log"))
 	EndMethod
-
-
 
 	Method LogFileContainsExpectedDataAtLogLevelWarning() {test}
 		Local filename:String = "data/test-log4-results.log"
@@ -164,8 +143,6 @@ Type TFileLogWriterTests Extends TTest
 		AssertTrue (AreFilesIdentical (filename, "data/test-log4.log"))
 	EndMethod
 
-
-
 	Method LogFileContainsExpectedDataAtLogLevelNotice() {test}
 		Local filename:String = "data/test-log5-results.log"
 		logWriter.SetFilename  (filename)
@@ -179,8 +156,6 @@ Type TFileLogWriterTests Extends TTest
 		AssertTrue (AreFilesIdentical (filename, "data/test-log5.log"))
 	EndMethod
 
-
-
 	Method LogFileContainsExpectedDataAtLogLevelInfo() {test}
 		Local filename:String = "data/test-log6-results.log"
 		logWriter.SetFilename  (filename)
@@ -193,8 +168,6 @@ Type TFileLogWriterTests Extends TTest
 
 		AssertTrue (AreFilesIdentical (filename, "data/test-log6.log"))
 	EndMethod
-
-
 
 	Method LogFileContainsExpectedDataAtLogLevelDebug() {test}
 		Local filename:String = "data/test-log7-results.log"
