@@ -75,7 +75,7 @@ For [Sublime Text][2] users there is a project file which can be used if you
 wish modify this module in any way.
 
 The project file includes build systems for building the module, and building
-and running both the Unit Tests and Example application.
+and running the Unit Tests.
 
 These build systems rely on the [Gradle][3] build automation system.
 
