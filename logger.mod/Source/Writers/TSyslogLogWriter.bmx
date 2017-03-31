@@ -1,14 +1,11 @@
 Rem
 '
-' muttley.logger - BlitzMax Logging Module
-' Copyright (C) 2009-2013 Paul Maskelyne
+' Copyright (c) 2009-2017 Paul Maskelyne <muttley@muttleyville.org>.
 '
-' This software is licensed under the terms of the Artistic
-' License version 2.0.
-'
-' For full license details, please read the file 'artistic-2_0.txt'
-' included with this distribution, or see
-' http://www.perlfoundation.org/legal/licenses/artistic-2_0.html
+' All rights reserved. Use of this code is allowed under the
+' Artistic License 2.0 terms, as specified in the LICENSE file
+' distributed with this code, or available from
+' http://www.opensource.org/licenses/artistic-license-2.0.php
 '
 EndRem
 

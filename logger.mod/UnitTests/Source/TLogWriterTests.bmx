@@ -1,6 +1,6 @@
-'
-' Unit tests for a generic log writer
-'
+Rem
+	bbdoc: Unit tests for a generic log writer
+End Rem
 Type TLogWriterTests Extends TTest
 
 	Field logger:TLoggerMock
